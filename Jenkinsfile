@@ -1,11 +1,9 @@
 pipeline {
 	agent any
 	stages {
-
-		stage('Build') {
+		stage('Build Docker Image')
 			steps {
-				sh 'chmod +x app.sh'
-				sh './app.sh'
+				sh 'docker build -t demo-app:v1 .'
 				}
 			}
 
